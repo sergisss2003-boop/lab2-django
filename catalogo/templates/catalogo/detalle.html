@@ -1,0 +1,23 @@
+{% extends 'catalogo/base.html' %}
+{% block title %}{{ producto.nombre }}{% endblock %}
+
+{% block content %}
+<article>
+    <h2>{{ producto.nombre }}</h2>
+    <p>{{ producto.descripcion }}</p>
+    <p><strong>Precio:</strong> ${{ producto.precio }}</p>
+    <p><strong>Proveedor:</strong> {{ producto.proveedor.nombre }} ({{ producto.proveedor.contacto }})</p>
+
+    {% if producto.existencias > 0 %}
+    <p class="disponible">
+        Disponible ({{ producto.existencias }} en existencia)
+    </p>
+    {% else %}
+    <p class="agotado">
+        Agotado
+    </p>
+    {% endif %}
+
+    <a href="{% url 'lista_productos' %}">Volver al catálogo</a>
+</article>
+{% endblock %}

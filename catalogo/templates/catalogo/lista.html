@@ -1,0 +1,17 @@
+{% extends 'catalogo/base.html' %}
+{% block title %}Catálogo - Todos los productos{% endblock %}
+
+{% block content %}
+<section>
+    <h2>Nuestros productos</h2>
+    <div class="lista-productos">
+        {% for producto in productos %}
+            <article class="producto-card">
+                <h3>{{ producto.nombre }}</h3>
+                <p>${{ producto.precio }}</p>
+                <a href="{% url 'detalle_producto' producto.id %}">Ver detalle</a>
+            </article>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

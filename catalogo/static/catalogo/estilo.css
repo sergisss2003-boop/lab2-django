@@ -1,0 +1,136 @@
+/* Reset básico */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f5f5f7;
+    color: #222;
+}
+
+/* Header y footer */
+header {
+    background: linear-gradient(90deg, #1e3a5f, #2c5282);
+    color: white;
+    padding: 1.5rem 2rem;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+footer {
+    background-color: #1e2a38;
+    color: #cbd5e0;
+    padding: 1rem 2rem;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* Contenido principal */
+main {
+    flex: 1;
+    padding: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+section h2 {
+    color: #1e3a5f;
+    border-bottom: 3px solid #2c5282;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Listado de productos con Flexbox */
+.lista-productos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.producto-card {
+    background: white;
+    border-radius: 10px;
+    padding: 1.2rem;
+    flex: 1 1 250px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.producto-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.producto-card h3 {
+    margin-top: 0;
+    color: #2c5282;
+}
+
+.producto-card a {
+    display: inline-block;
+    margin-top: 0.8rem;
+    color: white;
+    background-color: #2c5282;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.producto-card a:hover {
+    background-color: #1e3a5f;
+}
+
+/* Página de detalle */
+article {
+    background: white;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    max-width: 600px;
+}
+
+article h2 {
+    color: #1e3a5f;
+    margin-top: 0;
+}
+
+.disponible {
+    color: #2f855a;
+    background-color: #e6fffa;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.agotado {
+    color: #c53030;
+    background-color: #fff5f5;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+article a {
+    display: inline-block;
+    margin-top: 1.5rem;
+    color: #2c5282;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+article a:hover {
+    text-decoration: underline;
+}
