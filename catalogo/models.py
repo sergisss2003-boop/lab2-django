@@ -1,4 +1,5 @@
 from django.db import models
+from mongoengine import Document, StringField
 
 class Proveedor(models.Model):
     nombre = models.CharField(max_length=100)

@@ -9,26 +9,40 @@ body {
     flex-direction: column;
     min-height: 100vh;
     margin: 0;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background-color: #f5f5f7;
-    color: #222;
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    color: #2d2a3d;
+    background: linear-gradient(160deg, #6D5BD0 0%, #8B5CF6 35%, #C084FC 65%, #FBA1C9 100%);
+    background-attachment: fixed;
+}
+
+h1, h2, h3 {
+    font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
 }
 
 /* Header y footer */
 header {
-    background: linear-gradient(90deg, #1e3a5f, #2c5282);
+    background: rgba(20, 14, 46, 0.55);
+    backdrop-filter: blur(10px);
     color: white;
     padding: 1.5rem 2rem;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
 }
 
 header h1 {
     margin: 0;
-    font-size: 1.8rem;
+    font-size: 1.9rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    background: linear-gradient(90deg, #ffffff, #FDE68A);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
 footer {
-    background-color: #1e2a38;
-    color: #cbd5e0;
+    background: rgba(20, 14, 46, 0.55);
+    backdrop-filter: blur(10px);
+    color: #e9d8ff;
     padding: 1rem 2rem;
     text-align: center;
     font-size: 0.9rem;
@@ -37,17 +51,19 @@ footer {
 /* Contenido principal */
 main {
     flex: 1;
-    padding: 2rem;
+    padding: 2.5rem 2rem;
     max-width: 1100px;
     margin: 0 auto;
     width: 100%;
 }
 
 section h2 {
-    color: #1e3a5f;
-    border-bottom: 3px solid #2c5282;
+    color: #ffffff;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    border-bottom: 3px solid #FDE68A;
     padding-bottom: 0.5rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.8rem;
+    display: inline-block;
 }
 
 /* Listado de productos con Flexbox */
@@ -58,67 +74,80 @@ section h2 {
 }
 
 .producto-card {
-    background: white;
-    border-radius: 10px;
-    padding: 1.2rem;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 16px;
+    padding: 1.4rem;
     flex: 1 1 250px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    box-shadow: 0 8px 24px rgba(76, 29, 149, 0.18);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .producto-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    transform: translateY(-6px);
+    box-shadow: 0 14px 32px rgba(76, 29, 149, 0.28);
 }
 
 .producto-card h3 {
     margin-top: 0;
-    color: #2c5282;
+    color: #6D28D9;
+}
+
+.producto-card p {
+    font-weight: 600;
+    color: #C026D3;
 }
 
 .producto-card a {
     display: inline-block;
     margin-top: 0.8rem;
     color: white;
-    background-color: #2c5282;
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
+    background: linear-gradient(90deg, #8B5CF6, #EC4899);
+    padding: 0.55rem 1.1rem;
+    border-radius: 999px;
     text-decoration: none;
     font-size: 0.9rem;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.35);
+    transition: opacity 0.15s ease, transform 0.15s ease;
 }
 
 .producto-card a:hover {
-    background-color: #1e3a5f;
+    opacity: 0.9;
+    transform: scale(1.03);
 }
 
 /* Página de detalle */
 article {
-    background: white;
-    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 16px;
     padding: 2rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 8px 24px rgba(76, 29, 149, 0.18);
     max-width: 600px;
 }
 
 article h2 {
-    color: #1e3a5f;
+    color: #6D28D9;
     margin-top: 0;
 }
 
 .disponible {
-    color: #2f855a;
-    background-color: #e6fffa;
+    color: #065f46;
+    background-color: #d1fae5;
     padding: 0.5rem 1rem;
-    border-radius: 6px;
+    border-radius: 999px;
     font-weight: bold;
     display: inline-block;
 }
 
 .agotado {
-    color: #c53030;
-    background-color: #fff5f5;
+    color: #9f1239;
+    background-color: #ffe4e6;
     padding: 0.5rem 1rem;
-    border-radius: 6px;
+    border-radius: 999px;
     font-weight: bold;
     display: inline-block;
 }
@@ -126,11 +155,12 @@ article h2 {
 article a {
     display: inline-block;
     margin-top: 1.5rem;
-    color: #2c5282;
+    color: #8B5CF6;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 article a:hover {
+    color: #EC4899;
     text-decoration: underline;
 }
